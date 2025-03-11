@@ -13,7 +13,7 @@
 
 Welcome to **lyricSanctuary**, a web-based application designed to store, manage, and retrieve lyrics with associated musical and contextual information. This application is built with a focus on organization and extensibility, allowing users to store details such as song titles, authors, CCLI numbers, copyright information, detailed lyric breakdowns (verses, choruses, bridges, etc.), keys, associated documents (PDFs, MusicXML), songbook references, and Bible passages.
 
-LyricSanctuary uses a document-oriented database (CouchDB with Mango Query Server) to provide flexible data storage and retrieval, with a Python-based web UI and API. The application is designed to be scalable and maintainable, making it suitable for both personal use and collaborative projects.
+**lyricSanctuary** uses a document-oriented database (CouchDB with Mango Query Server) to provide flexible data storage and retrieval, with a Python-based web UI and API. The application is designed to be scalable and maintainable, making it suitable for both personal use and collaborative projects.
 
 ## Design Patterns
 
@@ -36,7 +36,7 @@ LyricSanctuary uses a document-oriented database (CouchDB with Mango Query Serve
 
 ## Installation
 
-Follow these steps to set up LyricSanctuary on your local machine:
+Follow these steps to set up **lyricSanctuary** on your local machine:
 
 1.  **Prerequisites:**
     * Python 3.8 or later
@@ -45,8 +45,8 @@ Follow these steps to set up LyricSanctuary on your local machine:
 
 2.  **Clone the Repository:**
     ```bash
-    git clone [repository_url]
-    cd LyricSanctuary
+    git clone https://github.com/mawdesign/lyricSanctuary
+    cd lyricSanctuary
     ```
 
 3.  **Create a Virtual Environment (Recommended):**
@@ -60,7 +60,6 @@ Follow these steps to set up LyricSanctuary on your local machine:
     ```bash
     pip install -r requirements.txt
     ```
-    * If you do not have a requirements.txt file, install couchdb with `pip install couchdb`
 
 5.  **Configure CouchDB:**
     * Ensure that CouchDB is running and accessible.
@@ -75,13 +74,6 @@ Follow these steps to set up LyricSanctuary on your local machine:
 
 8. **Database Creation:**
     * The database will be created on the first run, if it does not already exist.
-
-**For Development:**
-
-* It is suggested that you use a development branch.
-* Use git to manage your branches.
-* Use a virtual environment to isolate dependencies.
-* Write tests to ensure code quality.
 
 ## License
 
