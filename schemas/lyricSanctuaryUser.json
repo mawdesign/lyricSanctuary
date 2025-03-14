@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "lyricSanctuaryUser",
+  "description": "Schema for storing user information in lyricSanctuary.",
+  "version": "1.0",
+  "type": "object",
+  "properties": {
+    "_id": { "type": "string", "description": "Unique ID of the user." },
+    "username": { "type": "string", "description": "The user's username." },
+    "email": { "type": "string", "format": "email", "description": "The user's email address." },
+    "password_hash": { "type": "string", "description": "Hashed password of the user." },
+    "first_name": { "type": ["string", "null"], "description": "The user's first name, or null if not given." },
+    "last_name": { "type": ["string", "null"], "description": "The user's last name, or null if not given." },
+    "registration_date": { "type": "string", "format": "date-time", "description": "Date and time of user registration." },
+    "last_login": { "type": ["string", "null"], "format": "date-time", "description": "Date and time of last login, or null if never logged in." },
+    "roles": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "User roles (e.g., 'admin', 'editor', 'user')."
+    }
+  },
+  "required": ["_id", "username", "email", "password_hash", "registration_date"],
+  "additionalProperties": false
+}

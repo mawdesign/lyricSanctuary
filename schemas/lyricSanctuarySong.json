@@ -1,0 +1,132 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "lyricSanctuarySong",
+  "description": "Schema for storing song lyrics and related information in LyricSanctuary.",
+  "version": "1.0",
+  "type": "object",
+  "properties": {
+    "title": { "type": "string", "description": "The title of the song." },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "author_id": { "type": "string", "description": "ID of the author document." },
+          "name": { "type": "string", "description": "The author's name." }
+        },
+        "required": ["author_id", "name"],
+        "description": "Author/song writer/music composer information, including ID and name."
+      },
+      "description": "List of authors."
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z]{2}-[A-Z]{2}$",
+        "description": "Language code (e.g., 'en-NZ')."
+      },
+      "description": "Languages of the song."
+    },
+    "ccli_number": { "type": "string", "description": "The CCLI number of the song." },
+    "copyright": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "public_domain",
+            "cc-by",
+            "cc-by-sa",
+            "cc-by-nc",
+            "cc-by-nd",
+            "cc-by-nc-sa",
+            "cc-by-nc-nd",
+            "copyright"
+          ],
+          "description": "The type of copyright."
+        },
+        "version": {
+          "type": ["string", "null"],
+          "description": "The Creative Commons version (e.g., '4.0', '3.0'). Null if not applicable."
+        },
+        "text": { "type": "string", "description": "Detailed copyright information." }
+      },
+      "required": ["type"],
+      "description": "Copyright information."
+    },
+    "lyrics": {
+      "type": "object",
+      "properties": {
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["verse", "chorus", "bridge", "tag"],
+                "description": "The type of section."
+              },
+              "number": { "type": "string", "description": "The section number (e.g., '1', '2a')." },
+              "lyrics": { "type": "string", "description": "The lyrics of the section." }
+            },
+            "required": ["type", "number", "lyrics"],
+            "description": "A lyric section."
+          },
+          "description": "Array of lyric sections."
+        },
+        "presentation_order": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Presentation order of lyric sections (e.g., ['verse 1', 'chorus', 'verse 2']). Names must match section type and number."
+        }
+      },
+      "required": ["sections", "presentation_order"],
+      "description": "Lyrics and presentation order."
+    },
+    "lilypond": { "type": "string", "description": "Musical score in LilyPond notation format." },
+    "key": { "type": "string", "description": "The musical key of the song." },
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string", "description": "Title or description of the document." },
+          "type": { "type": "string", "description": "Type of document (e.g., 'music score', 'lyric video')." },
+          "url": { "type": "string", "format": "uri", "description": "URL of the document." }
+        },
+        "required": ["title", "type", "url"],
+        "description": "A document associated with the song."
+      },
+      "description": "Array of documents associated with the song."
+    }
+    "songbooks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string", "description": "Title of the songbook." },
+          "song_number": { "type": "integer", "description": "Song number in the songbook." }
+        },
+        "required": ["title"],
+        "description": "Songbook references."
+      },
+      "description": "List of songbooks song is found in."
+    },
+    "bible_references": {
+      "type": "array",
+      "items": { "type": "string", "description": "Full reference of bible passage, such as 'John 3:16' in same language as the song." },
+      "description": "Bible references."
+    },
+    "themes": {
+      "type": "array",
+      "items": { "type": "string", "description": "Theme of the song. OpenSong 'theme' and 'alttheme' fields." },
+      "description": "Themes of the song."
+    },
+    "tempo": { "type": "string", "description": "Tempo of the song. OpenSong 'tempo' field." },
+    "time_signature": { "type": "string", "description": "Time signature of the song. OpenSong 'timesig' field." },
+  },
+  "required": ["title", "authors", "lyrics", "languages"],
+  "additionalProperties": false // Prevent extra properties.
+}
