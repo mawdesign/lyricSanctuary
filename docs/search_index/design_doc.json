@@ -1,0 +1,35 @@
+{
+  "fulltext": {
+    "by_all_fields": {
+      "index": "function(doc) { 
+        var ret = new Document(); 
+        if (doc.title) { \
+          ret.add(doc.title, { 'boost': 2.0 }); // Title boost
+        }
+        if (doc.authors && doc.authors.length > 0) {
+          doc.authors.forEach(function(author) {
+            if (author.name) {
+              ret.add(author.name, { 'boost': 0.5 }); // Author boost
+            }
+          });
+        }
+        if (doc.lyrics && doc.lyrics.sections && doc.lyrics.sections.length > 0) {
+          doc.lyrics.sections.forEach(function(section) {
+            if (section.lyrics) {
+              ret.add(section.lyrics); // Main lyrics
+              if (section.type === 'verse' && section.number === '1') {
+                var firstLine = section.lyrics.split('\\n')[0];
+                ret.add(firstLine, {'boost': 1.2}); //Boost first line of first verse
+              }
+              if (section.type === 'chorus' && section.number === '1') {
+                var firstLine = section.lyrics.split('\\n')[0];
+                ret.add(firstLine, {'boost': 1.2}); //Boost first line of first chorus
+              }
+            }
+          });
+        }
+        return ret;
+      }"
+    }
+  }
+}
