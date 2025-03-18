@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "lyricSanctuaryAuthor",
+  "description": "Schema for storing author information in lyricSanctuary.",
+  "version": "1.0",
+  "type": "object",
+  "properties": {
+    "_id": { "type": "string", "description": "Unique ID of the author." },
+    "name": { "type": "string", "description": "The author's full name." },
+    "years_lived": { "type": ["string", "null"], "description": "Years the author lived (e.g., '1725-1807'), or null if unknown." },
+    "bio": { "type": "string", "description": "Biography of the author." },
+    "website": { "type": "string", "format": "uri", "description": "Author's website URL." },
+    "social_media": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "platform": {
+            "type": "string",
+            "enum": ["twitter", "facebook", "instagram", "youtube", "other"],
+            "description": "Social media platform."
+          },
+          "url": { "type": "string", "format": "uri", "description": "URL of the social media profile." }
+        },
+        "required": ["platform", "url"],
+        "description": "Social media link."
+      },
+      "description": "Social media links for the author."
+    },
+    "user_id": { "type": "string", "description": "ID of the linked user document." }
+  },
+  "required": ["_id", "name"],
+  "additionalProperties": false,
+}

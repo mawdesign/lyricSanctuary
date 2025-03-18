@@ -9,10 +9,10 @@
     "username": { "type": "string", "description": "The user's username." },
     "email": { "type": "string", "format": "email", "description": "The user's email address." },
     "password_hash": { "type": "string", "description": "Hashed password of the user." },
-    "first_name": { "type": ["string", "null"], "description": "The user's first name, or null if not given." },
-    "last_name": { "type": ["string", "null"], "description": "The user's last name, or null if not given." },
+    "first_name": { "type": "string", "description": "The user's first name." },
+    "last_name": { "type": "string", "description": "The user's last name." },
     "registration_date": { "type": "string", "format": "date-time", "description": "Date and time of user registration." },
-    "last_login": { "type": ["string", "null"], "format": "date-time", "description": "Date and time of last login, or null if never logged in." },
+    "last_login": { "type": "string", "format": "date-time", "description": "Date and time of last login." },
     "roles": {
       "type": "array",
       "items": { "type": "string" },
@@ -21,4 +21,10 @@
   },
   "required": ["_id", "username", "email", "password_hash", "registration_date"],
   "additionalProperties": false
+  "anyOf": [
+    { "required": ["first_name"] },
+    { "required": ["last_name"] },
+    { "required": ["last_login"] },
+    { "required": ["roles"] }
+  ]
 }
