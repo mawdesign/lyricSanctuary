@@ -31,8 +31,7 @@ def setup_logging(app_name="app"):
         "handlers": {
             "file": {
                 "class": "logging.handlers.RotatingFileHandler",
-                "filename": "log.json",
-                "maxBytes": 2048,
+                "maxBytes": 1048576,
                 "backupCount": 5,
                 "formatter": "json",
                 "level": log_level,
