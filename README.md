@@ -9,7 +9,7 @@
 * [Introduction](#introduction)
 * [Design Patterns](#design-patterns)
 * [Installation](#installation)
-* [References, Inspirations, and Acknowledgements](#references-iInspirations-and-acknowledgements)
+* [References, Inspirations, and Acknowledgements](#references-inspirations-and-acknowledgements)
 * [AI Usage](#ai-usage)
 * [License](#license)
 
