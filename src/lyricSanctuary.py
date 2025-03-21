@@ -4,6 +4,10 @@ from lyric_app.adapters.cli_ui import CliUI
 from lyric_app.adapters.lyrics_api import LyricsApiAdapter
 from lyric_app.application.lyrics_service import LyricsService
 from lyric_app.domain.lyrics_repository import LyricsRepository
+from lyric_app.adapters.logger import setup_logging, get_logger
+
+setup_logging("main")
+log = get_logger(__name__)
 
 
 def main():
@@ -20,4 +24,5 @@ def main():
 
 
 if __name__ == "__main__":
+    log.info("lyricSantuary application started")
     main()
