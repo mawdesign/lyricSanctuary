@@ -1,8 +1,8 @@
 # lyricSanctuary
 
 [![License](https://img.shields.io/badge/License-CC--BY--SA%204.0-lightgrey.svg)](LICENSE.md)
-![Google Gemini](https://img.shields.io/badge/google%20gemini-8E75B2?style=for-the-badge&logo=google%20gemini&logoColor=white)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Gemini](https://camo.githubusercontent.com/687bea399aa7e46c5d87e9a4278d1823159442036b0aacd5b2b3a23a1d743708/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f47656d696e692d41492d626c75652e737667)](https://www.gemini.com/)
 
 ## Table of Contents
 
