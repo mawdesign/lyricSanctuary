@@ -1,3 +1,4 @@
 requests
 uuid
+python-json-logger
 couchdb
