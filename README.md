@@ -9,8 +9,8 @@
 * [Introduction](#introduction)
 * [Design Patterns](#design-patterns)
 * [Installation](#installation)
-* [References, Inspirations, and Acknowledgements](#references)
-* [AI Usage](#AI)
+* [References, Inspirations, and Acknowledgements](#references-iInspirations-and-acknowledgements)
+* [AI Usage](#ai-usage)
 * [License](#license)
 
 ## Introduction
@@ -90,13 +90,13 @@ Follow these steps to set up **lyricSanctuary** on your local machine:
 8. **Database Creation:**
     * The database will be created on the first run, if it does not already exist.
 
-## References, Inspirations, and Acknowledgements {#references}
+## References, Inspirations, and Acknowledgements
 
 * [Hexagonal architecture](https://dzone.com/articles/hexagonal-architecture-lyrics-app-example-java?edition=965104) for the idea to make a lyric store using hexagonal architecture.
 * [OpenSong](https://opensong.org/development/file-formats/) has been used as a basis for ensuring the schema for songs has all the necessary fields.
 
 
-## AI Usage {#AI}
+## AI Usage
 
 This project is an experiment with utilising AI as a coding companion, Google Gemini has been used to help write code and Gemini Code Assist has been used to review code.
 
