@@ -69,7 +69,7 @@ def exception_hook(exc_type, exc_value, tb):
         },
     )
 
-    os._exit(1)  # Exit the application after logging the exception
+    sys.exit(1)  # Exit the application after logging the exception
 
 
 # Set up exception hook
