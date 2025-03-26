@@ -1,8 +1,13 @@
-# lyricSanctuary
+<p align=center>
+   <img alt="lyricSanctuary" src="/docs/assets/LS_logo-dark.svg" />
+</p>
+
+---
 
 [![License](https://img.shields.io/badge/License-CC--BY--SA%204.0-lightgrey.svg)](LICENSE.md)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Gemini](https://camo.githubusercontent.com/687bea399aa7e46c5d87e9a4278d1823159442036b0aacd5b2b3a23a1d743708/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f47656d696e692d41492d626c75652e737667)](https://www.gemini.com/)
+[![Google Gemini](https://img.shields.io/badge/Google%20Gemini-886FBF?logo=googlegemini&logoColor=fff)](https://gemini.google.com)
+[![stability-wip](https://img.shields.io/badge/stability-wip-lightgrey.svg)](https://github.com/mkenney/software-guides/blob/master/STABILITY-BADGES.md#work-in-progress)
 
 ## Table of Contents
 
@@ -43,13 +48,14 @@ Welcome to **lyricSanctuary**, a web-based application designed to store, manage
 This application is designed to run on a LEMP (Linux, Nginx, Mango/CouchDB, Python) Stack on a server.
 
 Basic server setup is:
-    ```bash
-    sudo apt update
-    sudo apt install nginx ufw
-    sudo ufw allow 'Nginx HTTP'
-    sudo ufw allow 'Nginx HTTPS' #If you will use https
-    sudo ufw enable
-    ```
+
+  ```bash
+  sudo apt update
+  sudo apt install nginx ufw
+  sudo ufw allow 'Nginx HTTP'
+  sudo ufw allow 'Nginx HTTPS' # If you will use https
+  sudo ufw enable
+  ```
 
 Follow these steps to set up **lyricSanctuary** on your local machine:
 
@@ -81,6 +87,16 @@ Follow these steps to set up **lyricSanctuary** on your local machine:
     * Update the application's configuration to point to your CouchDB instance.
     * The application expects the COUCHDB_URL and COUCHDB_DATABASE to be set.
 
+       <details>
+       <summary>On macOS...</summary>
+
+       ```bash
+       launchctl setenv COUCHDB_URL 127.0.0.1
+       launchctl setenv COUCHDB_DATABASE lyricSanctuary
+       ```
+       
+       </details>
+
 6.  **Run the Application:**
     * Start the python web app using your selected python web framework.
 
@@ -94,8 +110,8 @@ Follow these steps to set up **lyricSanctuary** on your local machine:
 
 * [Hexagonal architecture](https://dzone.com/articles/hexagonal-architecture-lyrics-app-example-java?edition=965104) for the idea to make a lyric store using hexagonal architecture.
 * [OpenSong](https://opensong.org/development/file-formats/) has been used as a basis for ensuring the schema for songs has all the necessary fields.
-
-
+* [BetterStack](https://betterstack.com/community/guides/logging/how-to-start-logging-with-python/) guides to logging and using json files.
+  
 ## AI Usage
 
 This project is an experiment with utilising AI as a coding companion, Google Gemini has been used to help write code and Gemini Code Assist has been used to review code.
