@@ -1,8 +1,7 @@
 <p align=center>
-   <img alt="lyricSanctuary" src="/docs/assets/LS_logo-dark.svg" />
+   <img alt="lyricSanctuary" src="/docs/assets/LS_logo-dark.svg" /><br/>
 </p>
-
----
+<h2 align=center><em>Lyrics and Music. Sorted.</em></h2>
 
 [![License](https://img.shields.io/badge/License-CC--BY--SA%204.0-lightgrey.svg)](LICENSE.md)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
